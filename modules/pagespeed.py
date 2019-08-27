@@ -1,6 +1,5 @@
 import requests
-from pagespeed.responses import DesktopPageSpeed, MobilePageSpeed
-
+from modules.responses import DesktopPageSpeed, MobilePageSpeed
 
 class PageSpeed(object):
     """Google PageSpeed analysis client
@@ -12,10 +11,9 @@ class PageSpeed(object):
 
     def __init__(self, api_key=None):
         self.api_key = api_key
-        self.endpoint = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed'
+        self.endpoint = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
 
-    def analyse(self, url, filter_third_party_resources=False, screenshot=False,
-                strategy='desktop'):
+    def analyse(self, url, filter_third_party_resources=False, screenshot=False, strategy='desktop'):
         """Run PageSpeed test
 
         Args:
@@ -26,8 +24,6 @@ class PageSpeed(object):
             rule (list, optional): A PageSpeed rule to run; if none are given, all rules are run
             screenshot (bool, optional): Indicates if binary data containing a screenshot should
                 be included (Default: false)
-            strategy (str, optional): The analysis strategy to use. Acceptable values: 'desktop', 'mobile'
-
         """
 
         params = {
@@ -48,4 +44,6 @@ class PageSpeed(object):
         else:
             response = DesktopPageSpeed(raw)
 
-        return response
+        result = int(response.speed * 100)
+
+        return result
