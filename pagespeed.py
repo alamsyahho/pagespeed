@@ -1,4 +1,4 @@
-from modules.pagespeed import PageSpeed
+from lib.google_pagespeed import GooglePagespeed
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -9,7 +9,7 @@ parser.add_argument('-s', '--strategy', action='store', dest='strategy', choices
 args = parser.parse_args()
 
 if __name__ == "__main__":
-    ps = PageSpeed()
+    ps = GooglePagespeed()
     pageSpeed = ps.analyse(args.url, strategy=args.strategy)
 
     print(pageSpeed)

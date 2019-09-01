@@ -1,7 +1,7 @@
 import requests
-from modules.responses import DesktopPageSpeed, MobilePageSpeed
+from lib.responses import DesktopPageSpeed, MobilePageSpeed
 
-class PageSpeed(object):
+class GooglePagespeed(object):
     """Google PageSpeed analysis client
 
     Attributes:

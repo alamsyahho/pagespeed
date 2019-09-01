@@ -1,7 +1,7 @@
-from modules.pagespeed import PageSpeed
+from lib.google_pagespeed import GooglePagespeed
 
-p = PageSpeed()
+p = GooglePagespeed()
 
-r = p.analyse('https://www.example.com', strategy='desktop')
+r = p.analyse('https://www.google.com', strategy='desktop')
 
 print(r)
