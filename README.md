@@ -9,10 +9,10 @@ It is written in Python and provides an easy way to query a site's page speed.
 Execute the script:
 
 ```
-$ python3.7 main.py -u https://www.example.com -s desktop
+$ python3.7 pagespeed.py -u https://www.example.com -s desktop
 100
 
-$ python3.7 main.py -u https://www.example.com -s mobile
+$ python3.7 pagespeed.py -u https://www.example.com -s mobile
 100
 
 ```
